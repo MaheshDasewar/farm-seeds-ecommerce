@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Seeds E-Commerce</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Using the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header and Navigation Bar -- UPDATED -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-green-800">
+                <a href="#">FarmFresh Seeds</a>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-green-600">Home</a>
+                <!-- Products Dropdown -->
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-green-600 inline-flex items-center">
+                        Products
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute z-10 hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 group-hover:block">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100">Category 1</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100">Category 2</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-600 hover:text-green-600">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-green-600">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                 <a href="#" class="text-gray-600 hover:text-green-600">Login</a>
+                 <a href="#" class="relative text-gray-600 hover:text-green-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                 </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-green-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-600">Home</a>
+             <!-- Mobile Products Dropdown -->
+            <div>
+                <button id="mobile-products-button" class="w-full text-left flex justify-between items-center py-2 text-gray-600 hover:text-green-600">
+                    <span>Products</span>
+                    <svg id="mobile-products-arrow" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="mobile-products-menu" class="hidden pl-4">
+                    <a href="#" class="block py-2 text-gray-600 hover:text-green-600">Category 1</a>
+                    <a href="#" class="block py-2 text-gray-600 hover:text-green-600">Category 2</a>
+                </div>
+            </div>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-600">About Us</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-600">Contact</a>
+            <a href="#" class="block py-2 text-gray-600 hover:text-green-600">Login</a>
+            <a href="#" class="flex items-center py-2 text-gray-600 hover:text-green-600">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                Cart (0)
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-green-100 py-20 px-6">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-green-800 leading-tight">Quality Seeds for a Bountiful Harvest</h1>
+                <p class="text-lg md:text-xl text-green-700 mt-4 max-w-3xl mx-auto">Discover a wide range of premium, non-GMO seeds to help you grow healthy and delicious produce.</p>
+                <a href="#" class="mt-8 inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition duration-300">Shop All Seeds</a>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Our Featured Products</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Product Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/a3e635/14532d?text=Tomato+Seeds" alt="Tomato Seeds" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Heirloom Tomato Seeds</h3>
+                            <p class="text-gray-600 mt-2">Rich flavor and vibrant colors. Perfect for salads and sauces.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-xl font-bold text-green-600">₹4.99</span>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition duration-300">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/86efac/14532d?text=Carrot+Seeds" alt="Carrot Seeds" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Danvers Carrot Seeds</h3>
+                            <p class="text-gray-600 mt-2">Sweet, crisp, and easy to grow. A classic for any garden.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-xl font-bold text-green-600">₹3.49</span>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition duration-300">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/bbf7d0/14532d?text=Lettuce+Seeds" alt="Lettuce Seeds" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Buttercrunch Lettuce Seeds</h3>
+                            <p class="text-gray-600 mt-2">Soft, buttery leaves that form a compact head. Great for fresh salads.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="text-xl font-bold text-green-600">₹2.99</span>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-gray-400 hover:text-red-500 transition duration-300">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                    <a href="#" class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 FarmFresh Seeds. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-green-400">Privacy Policy</a>
+                <a href="#" class="hover:text-green-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript for main mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for mobile products dropdown toggle
+        const mobileProductsButton = document.getElementById('mobile-products-button');
+        const mobileProductsMenu = document.getElementById('mobile-products-menu');
+        const mobileProductsArrow = document.getElementById('mobile-products-arrow');
+
+        mobileProductsButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent the main menu from closing
+            mobileProductsMenu.classList.toggle('hidden');
+            mobileProductsArrow.classList.toggle('rotate-180');
+        });
+    </script>
+
+</body>
+</html>
